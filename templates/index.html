@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-5 h-100">
+      <h1 class="display-4 text-center">Time Table</h1>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">Period/Time Days</th>
+            <th scope="col">8:30 - 9:25</th>
+            <th scope="col">9:30 - 10:25</th>
+            <th scope="col">10:30 - 11:25</th>
+            <th scope="col">11:30 - 12:25</th>
+            <th scope="col">12:30 - 01:25</th>
+            <th scope="col">01:30 - 02:25</th>
+            <th scope="col">02:30 - 03:25</th>
+            <th scope="col">03:30 - 04:25</th>
+            <th scope="col">04:30 - 05:25</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data,value in data.items() %}
+            <tr>
+                <th scope="row">{{data}}</th>
+                    {% for i,j in value.items() %} 
+                        {% for each in j %} 
+                            {% for k,v in each.items() %}
+                                <td>{{v}}</td>
+                            {% endfor %} 
+                        {% endfor %} 
+                    {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
