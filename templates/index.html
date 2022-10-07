@@ -38,7 +38,7 @@
                         {% for each in j %} 
                             {% for k,v in each.items() %}
                               {% if v['subject']!="" and v['teacher']!="" and v['room']!="" %}
-                                  <td style="font-weight: 500;" class="px-2">{{v['subject']}} {{v['teacher']}}<br>{{v['room']}}</td>
+                                  <td style="font-weight: 500; cursor: pointer;" class="px-2">{{v['subject']}} {{v['teacher']}}<br>{{v['room']}}</td>
                               {% else %}
                                   <td></td>
                               {% endif %}
